@@ -6,19 +6,19 @@ const initialState = {
 
 const reducer = (state=initialState, action) => {
     switch (action.type) {
-        case 'MENU_REQUESTED':
+        case 'FETCH_MENU_REQUEST':
             return {
                 menu: [],
                 loading: true,
                 error: null
             };
-        case 'MENU_LOADED':
+        case 'FETCH_MENU_SUCCESS':
             return {
                 menu: action.payload,
                 loading: false,
                 error: null
             };
-        case 'MENU_ERROR':
+        case 'FETCH_MENU_FAILURE':
             return {
                 menu:[],
                 loading: false,

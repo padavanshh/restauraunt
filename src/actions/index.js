@@ -1,19 +1,19 @@
+const menuRequested = () => {
+    return {
+        type: 'FETCH_MENU_REQUEST'
+    }
+};
+
 const menuLoaded = (newMenu) => {
     return {
-        type: 'MENU_LOADED',
+        type: 'FETCH_MENU_SUCCESS',
         payload: newMenu
     };
 };
 
-const menuRequested = ()=>{
-    return {
-        type: 'MENU_REQUESTED'
-    }
-};
-
 const menuError=(newError)=>{
     return {
-        type: 'MENU_ERROR',
+        type: 'FETCH_MENU_FAILURE',
         payload: newError
     }
 }
