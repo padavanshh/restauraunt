@@ -5,6 +5,21 @@ const menuLoaded = (newMenu) => {
     };
 };
 
+const menuRequested = ()=>{
+    return {
+        type: 'MENU_REQUESTED'
+    }
+};
+
+const menuError=(newError)=>{
+    return {
+        type: 'MENU_ERROR',
+        payload: newError
+    }
+}
+
 export {
-    menuLoaded
+    menuLoaded,
+    menuRequested,
+    menuError
 };
