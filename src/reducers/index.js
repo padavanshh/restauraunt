@@ -2,22 +2,7 @@ const initialState = {
     menu: [],
     loading: true,
     error: null,
-    items: [
-        {
-            "title": "Cesar salad",
-            "price": 12,
-            "url": "https://static.1000.menu/img/content/21458/-salat-cezar-s-kr-salat-cezar-s-krevetkami-s-maionezom_1501173720_1_max.jpg",
-            "category": "salads",
-            "id": 1
-        },
-        {
-            "title": "Pizza Margherita",
-            "price": 10,
-            "url": "https://www.ricettedalmondo.it/images/foto-ricette/p/17500-pizza-margherita.jpg",
-            "category": "pizza",
-            "id": 2
-        }
-    ],
+    items: [],
     total: 50
 };
 
@@ -43,6 +28,23 @@ const reducer = (state=initialState, action) => {
                 menu:[],
                 loading: false,
                 error: action.payload
+            };
+        case 'ADDED_TO_CART':
+            const dishId = action.payload
+            const dish = state.menu.find((item)=>item.id===dishId)
+            const newItem = {
+                title: dish.title,
+                price: dish.price,
+                url: dish.url,
+                category: dish.category,
+                id: dish.id
+            }
+            return {
+                ...state,
+                items: [
+                    ...state.items,
+                    newItem
+                ]
             }
         default :
             return state;
