@@ -1,6 +1,7 @@
 import React from 'react';
 import './cart-table.scss';
 import {connect} from "react-redux";
+import {allRemoveFromCart, dishAddedToCart, dishRemoveFromCart} from "../../actions";
 
 const CartTable = ({items, onDelete, onIncrease, onDecrease}) => {
     return (
@@ -32,15 +33,11 @@ const mapStateToProps = (state)=> {
     }
 };
 
-const mapDispatchToProps = () => {
-    return {
-        onIncrease: (id) => {
-            console.log('increase '+ id)
-        },
-        onDecrease: (id) => {console.log('decrease '+ id)},
-        onDelete: (id)=>{console.log('delete '+ id)}
-
-    }
+const mapDispatchToProps = {
+        onIncrease: dishAddedToCart,
+        onDecrease: dishRemoveFromCart,
+        onDelete: allRemoveFromCart
 }
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartTable);

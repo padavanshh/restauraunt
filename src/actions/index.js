@@ -22,12 +22,28 @@ const dishAddedToCart = (dishId) => {
     return {
         type: 'ADDED_TO_CART',
         payload: dishId
-    }
-}
+    };
+};
+
+const dishRemoveFromCart = (dishId) => {
+    return {
+        type: 'REMOVE_FROM_CART',
+        payload: dishId
+    };
+};
+
+const allRemoveFromCart = (dishId) => {
+    return {
+        type: 'ALL_REMOVE_FROM_CART',
+        payload: dishId
+    };
+};
 
 export {
     menuLoaded,
     menuRequested,
     menuError,
-    dishAddedToCart
+    dishAddedToCart,
+    dishRemoveFromCart,
+    allRemoveFromCart
 };
