@@ -3,6 +3,7 @@
 		{
 			"title": "Cesar salad",
 			"price": 12,
+			"count": 0,
 			"url": "https://static.1000.menu/img/content/21458/-salat-cezar-s-kr-salat-cezar-s-krevetkami-s-maionezom_1501173720_1_max.jpg",
 			"category": "salads",
 			"id": 1
@@ -10,6 +11,7 @@
 		{
 			"title": "Pizza Margherita",
 			"price": 10,
+			"count": 0,
 			"url": "https://www.ricettedalmondo.it/images/foto-ricette/p/17500-pizza-margherita.jpg",
 			"category": "pizza",
 			"id": 2
@@ -17,6 +19,7 @@
 		{
 			"title": "Pizza Napoletana",
 			"price": 13,
+			"count": 0,
 			"url": "https://www.ricettedalmondo.it/images/foto-ricette/p/17500-pizza-margherita.jpg",
 			"category": "pizza",
 			"id": 3
@@ -24,6 +27,7 @@
 		{
 			"title": "Greece salad",
 			"price": 8,
+			"count": 0,
 			"url": "https://assets.epicurious.com/photos/576454fb42e4a5ed66d1df6b/master/pass/greek-salad.jpg",
 			"category": "salads",
 			"id": 4
@@ -31,6 +35,7 @@
 		{
 			"title": "Cowboy Steak",
 			"price": 25,
+			"count": 0,
 			"url": "https://i.cbc.ca/1.4491288.1516208229!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/cowboysteak.jpg",
 			"category": "meat",
 			"id": 5

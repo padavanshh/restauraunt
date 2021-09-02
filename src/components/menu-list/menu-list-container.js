@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
-import MenuListItem from '../menu-list-item';
-
 import {connect} from "react-redux";
 import WithRestoService from "../hoc";
 import {menuLoaded, menuRequested, menuError, dishAddedToCart} from "../../actions";
 import Spinner from "../spinner";
-
-import './menu-list.scss';
 import Error from "../error";
 import MenuList from "./menu-list";
+
+import './menu-list.scss';
 
 class MenuListContainer extends Component {
 
@@ -41,7 +39,8 @@ class MenuListContainer extends Component {
 const mapStateToProps = (state) => {
     return {
         menuList: state.menu,
-        loading: state.loading
+        loading: state.loading,
+        error: state.error
     }
 };
 

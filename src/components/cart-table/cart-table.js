@@ -10,11 +10,12 @@ const CartTable = ({items, onDelete, onIncrease, onDecrease}) => {
             <div className="cart__list">
                 {
                     items.map((item) => {
-                        const {url, title, id, price} = item;
+                        const {url, title, id, price, count} = item;
                         return (
                             <div key={id} className="cart__item">
                                 <img src={url} className="cart__item-img" alt={title}></img>
                                 <div className="cart__item-title">{title}</div>
+                                <div className="cart__item-count">{count}</div>
                                 <div className="cart__item-price">{price}$</div>
                                 <button onClick={() => onDecrease(id)} className="cart__dec">-</button>
                                 <button onClick={() => onIncrease(id)} className="cart__inc">+</button>

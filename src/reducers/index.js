@@ -3,7 +3,7 @@ const initialState = {
     loading: true,
     error: null,
     items: [],
-    total: 50
+    total: 0
 };
 
 const updateCartItems = (cartItems, item, idx) => {
@@ -33,18 +33,20 @@ const updateItem = (dish, item = {}, value) => {
     const {
         title = dish.title,
         price = 0,
+        count = 0,
         url = dish.url,
         category = dish.category,
-        id = dish.id
-    } = item
+        id = dish.id } = item;
 
     return {
         title,
         price: price + dish.price * value,
+        count: count + value,
         url,
         category,
         id
     }
+
 };
 
 const updateOrder = (state, dishId, value) => {
@@ -55,7 +57,8 @@ const updateOrder = (state, dishId, value) => {
     const newItem = updateItem(dish, item, value)
     return {
         ...state,
-        items: updateCartItems(state.items, newItem, itemIndex)
+        items: updateCartItems(state.items, newItem, itemIndex),
+        total: state.items.reduce((sum, item) => sum + item.price, 0)
     }
 }
 
