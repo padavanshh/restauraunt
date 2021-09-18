@@ -20,7 +20,7 @@ const AppHeader = ({total}) => {
 
 const mapStateToProps = (state)=>{
     return {
-        total: state.total
+        total: state.items.reduce((sum, item) => sum + item.price, 0)
     }
 }
 

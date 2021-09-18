@@ -57,9 +57,9 @@ const updateOrder = (state, dishId, value) => {
     const newItem = updateItem(dish, item, value)
     return {
         ...state,
-        items: updateCartItems(state.items, newItem, itemIndex),
-        total: state.items.reduce((sum, item) => sum + item.price, 0)
+        items: updateCartItems(state.items, newItem, itemIndex)
     }
+
 }
 
 const reducer = (state = initialState, action) => {
